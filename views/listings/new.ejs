@@ -1,59 +1,24 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanderLust</title>
-  </head>
-  <body>
-    <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings">
-      <input name="listing[title]" placeholder="enter title" type="text" />
-      <br /><br />
-      <textarea
-        name="listing[description]"
-        placeholder="enter description"
-      ></textarea>
-      <br /><br />
-      <input
-        name="listing[image]"
-        placeholder="enter image URL/Link"
-        type="text"
-      />
-      <br /><br />
-      <input name="listing[price]" placeholder="enter price" type="number" />
-      <br /><br />
-      <input name="listing[country]" placeholder="enter country" type="text" />
-      <br /><br />
-      <input
-        name="listing[location]"
-        placeholder="enter location"
-        type="text"
-      />
-      <br /><br />
-      <button>Add</button>
-    </form>
-  </body>
-</html> -->
-
 <% layout("/layouts/boilerplate") %>
 
 <body>
-  <div class="roe">
+  <div class="row">
     <div class="col-8 offset-2">
       <br><br>
       <h3>Create a New Listing</h3>
-      <form method="POST" action="/listings">
+      <form method="POST" action="/listings" class="needs-validation" novalidate>
         <div class="mb-3">
           <label for="title" class="form-lable">Title</label>
-          <input name="listing[title]" placeholder="Add a catch title" type="text" class="form-control"/>
+          <input name="listing[title]" placeholder="Add a catch title" type="text" class="form-control" required/>
+          <div class="valid-feedback">Looks Good</div>
         </div>
         <div class="mb-3">
           <label for="description" class="form-lable">Description</label>
           <textarea
             name="listing[description]"
             class="form-control"
+            required
           ></textarea>
+          <div class="invalid-feedback">Please add Some description</div>
         </div>
         <div class="mb-3">
           <label for="image" class="form-lable">Image</label>
@@ -67,11 +32,13 @@
         <div class="row">
           <div class="mb-3 col-md-4">
             <label for="price" class="form-lable">Price</label>
-            <input name="listing[price]" placeholder="1200" type="number" class="form-control"/>
+            <input name="listing[price]" placeholder="0000"  class="form-control" required/>
+            <div class="invalid-feedback">Please enter price</div>
           </div>
           <div class="mb-3 col-md-8">
             <label for="country" class="form-lable">Country</label>
-            <input name="listing[country]" placeholder="India" type="text" class="form-control"/>
+            <input name="listing[country]" placeholder="India" type="text" class="form-control" required/>
+            <div class="invalid-feedback">Please enter country</div>
           </div>
         </div>
         <div class="mb-3">
@@ -81,7 +48,9 @@
             placeholder="Kaithal, Haryana"
             type="text"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Please enter location</div>
         </div>
         
         <br><br>
