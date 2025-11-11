@@ -60,7 +60,7 @@ body{
 }
 
 /* cards */
-.card{
+.listing-card{
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -80,8 +80,8 @@ body{
 }
 
 .listing-link{
-    text-decoration: none;
     color: #222222;
+    text-decoration: none;
 }
 
 
