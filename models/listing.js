@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const review = require("./review");
-const { ref } = require("joi");
+const { ref, required } = require("joi");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
 
@@ -20,7 +20,7 @@ const listingSchema = new Schema({
         v === ""
           ? "https://media.istockphoto.com/id/930082108/photo/solitary-lime-tree-in-fields-of-rapeseed-and-wheat-under-blue-sky.jpg?s=612x612&w=0&k=20&c=ALuNL8rkWjxYu8aCytJAoW13AdYC2Hc2DIgFbNQ6KcU="
           : v,
-    }
+    },
   },
   price: Number,
   location: String,
